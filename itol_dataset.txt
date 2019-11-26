@@ -1,0 +1,161 @@
+DATASET_PIECHART
+#In pie chart datasets, each ID is associated to multiple numeric values, which are displayed as a pie chart directly on the node branch, or outside the tree
+#lines starting with a hash are comments and ignored during parsing
+
+#=================================================================#
+#                    MANDATORY SETTINGS                           #
+#=================================================================#
+#select the separator which is used to delimit the data below (TAB,SPACE or COMMA).This separator must be used throughout this file (except in the SEPARATOR line, which uses space).
+SEPARATOR TAB
+#SEPARATOR SPACE
+#SEPARATOR COMMA
+
+#label is used in the legend table (can be changed later)
+DATASET_LABEL	example multi bar chart
+
+#dataset color (can be changed later)
+COLOR	#ff0000
+
+#define colors for each individual field column (use hexadecimal, RGB or RGBA notation; if using RGB/RGBA, COMMA cannot be used as SEPARATOR)
+FIELD_COLORS	#ff0000
+
+#field labels
+FIELD_LABELS	f1
+
+#=================================================================#
+#                    OPTIONAL SETTINGS                            #
+#=================================================================#
+
+#each dataset can have a legend, which is defined below
+#for each row in the legend, there should be one shape, color and label
+#shape should be a number between 1 and 6:
+#1: square
+#2: circle
+#3: star
+#4: right pointing triangle
+#5: left pointing triangle
+#6: checkmark
+
+#LEGEND_TITLE,Dataset legend
+#LEGEND_SHAPES,1,2,3
+#LEGEND_COLORS,#ff0000,#00ff00,#0000ff
+#LEGEND_LABELS,value1,value2,value3
+
+#=================================================================#
+#     all other optional settings can be set or changed later     #
+#           in the web interface (under 'Datasets' tab)           #
+#=================================================================#
+
+#left margin, used to increase/decrease the spacing to the next dataset. Can be negative, causing datasets to overlap. Used only for piecharts which are displayed on the outside
+#MARGIN,0
+
+#applies to external pie charts only; if set, pie charts associated to internal nodes will be displayed even if these nodes are not collapsed. It could cause overlapping in the dataset display.
+#SHOW_INTERNAL,0
+
+#maximum pie chart radius will be displayed with this size, others will be proportionally smaller. This setting applies to internal pie charts only.
+#MAXIMUM_SIZE,50
+
+#pie chart height factor; For external pie charts, default radius will be slightly less than the available space between leaves, but you can set a multiplication factor here to increase/decrease it (values from 0 to 1 will decrease it, values above 1 will increase it)
+#HEIGHT_FACTOR,1
+
+#border width; if set above 0, a border of specified width (in pixels) will be drawn around the pie chart segments 
+#BORDER_WIDTH,0
+
+#border color; used when BORDER_WIDTH is above 0
+#BORDER_COLOR,#0000ff
+
+
+#Internal tree nodes can be specified using IDs directly, or using the 'last common ancestor' method described in iTOL help pages
+#=================================================================#
+#       Actual data follows after the "DATA" keyword              #
+#=================================================================#
+#the following fields are required for each node:
+#ID,position,radius,value1,value2,value3...
+#position defines the position of the pie chart on the tree:
+#  -1 = external pie chart
+#  a number between 0 and 1 = internal pie chart positioned at the specified value along the node branch (for example, position 0 is exactly at the start of node branch, position 0.5 is in the middle, and position 1 is at the end)
+
+DATA
+#Examples
+
+#node 9606 will have an external pie chart
+#9606,-1,10,10000,15000,9000
+
+#node 9123 will have an internal pie chart directly over the node, and with radius 50 (actual display radius will depend on other values in the dataset and the MAXIMUM_SIZE specified)
+Node_2	0	5.045	7
+Node_3	0	4.26	7
+Node_4	0	6.725	7
+Node_5	0	6.55	7
+Node_6	0	7.135	7
+Node_7	0	6.795	7
+Node_8	0	4.93	7
+Node_9	0	5.495	7
+Node_10	0	5.5	7
+Node_11	0	5.5	7
+Node_12	0	5.495	7
+Node_13	0	6.71	7
+Node_14	0	7.775	7
+Node_15	0	7.5	7
+Node_16	0	8.04	7
+Node_17	0	8.225	7
+Node_18	0	8.055	7
+Node_19	0	8.22	7
+Node_20	0	8.125	7
+Node_21	0	8.82	7
+Node_22	0	8.11	7
+Node_23	0	7.775	7
+Node_24	0	7.47	7
+Node_25	0	7.775	7
+Node_26	0	8.08	7
+Node_27	0	8.03	7
+Node_28	0	8.015	7
+Node_29	0	7.555	7
+Node_30	0	7.5	7
+Node_31	0	8.23	7
+Node_32	0	8.365	7
+Node_33	0	8.26	7
+Node_34	0	8.235	7
+Node_35	0	8.225	7
+Node_36	0	8.195	7
+Node_37	0	7.84	7
+Node_38	0	8	7
+Node_39	0	8.17	7
+Node_40	0	8.37	7
+Node_41	0	8.93	7
+Node_42	0	8.955	7
+Node_43	0	8.905	7
+Node_44	0	8.88	7
+Node_45	0	8.625	7
+Node_46	0	8.3	7
+Node_47	0	8.25	7
+Node_48	0	7.845	7
+Node_49	0	7.5	7
+Node_50	0	8.43	7
+Node_51	0	8.61	7
+Node_52	0	8.605	7
+Node_53	0	8.5	7
+Node_54	0	8.5	7
+Node_55	0	8.61	7
+Node_56	0	9	7
+Node_57	0	8.48	7
+Node_58	0	8.68	7
+Node_59	0	8.82	7
+Node_60	0	9	7
+Node_61	0	8.72	7
+Node_62	0	8.645	7
+Node_63	0	8.45	7
+Node_64	0	8.465	7
+Node_65	0	8.48	7
+Node_66	0	8.505	7
+Node_67	0	8.445	7
+Node_68	0	7.975	7
+Node_69	0	7.5	7
+Node_70	0	7.5	7
+Node_71	0	7.5	7
+Node_72	0	8	7
+Node_73	0	8.18	7
+Node_74	0	8.26	7
+
+
+
+
